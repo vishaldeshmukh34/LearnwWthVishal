@@ -1,0 +1,152 @@
+.mentors {
+  padding: 140px 10%;
+  text-align: center;
+  background: linear-gradient(-45deg, #eef2f3, #d9e4f5, #ffffff, #e6f0ff);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section-title {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #1e2a38;
+}
+
+.section-subtitle {
+  margin-bottom: 80px;
+  color: #555;
+  font-size: 18px;
+}
+
+/* Grid */
+.mentor-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+/* Card */
+.mentor-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  padding: 50px 30px;
+  border-radius: 30px;
+  transition: 0.5s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s forwards;
+}
+
+/* Stagger animation */
+.mentor-card:nth-child(1){ animation-delay: 0.2s; }
+.mentor-card:nth-child(2){ animation-delay: 0.4s; }
+.mentor-card:nth-child(3){ animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow Border Effect */
+.mentor-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 2px;
+  background: linear-gradient(45deg, #243b55, #4facfe, #243b55);
+  -webkit-mask:
+     linear-gradient(#000 0 0) content-box,
+     linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.mentor-card:hover::before {
+  opacity: 1;
+}
+
+.mentor-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* Image */
+.mentor-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 6px solid #243b55;
+  transition: 0.5s ease;
+}
+
+.mentor-card:hover img {
+  transform: scale(1.1) rotate(6deg);
+}
+
+/* Text */
+.role {
+  font-weight: 600;
+  margin-top: 10px;
+  color: #333;
+}
+
+.company {
+  color: #4facfe;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.experience {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.mentor-card button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #243b55, #141e30);
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.mentor-card button:hover {
+  background: linear-gradient(135deg, #4facfe, #243b55);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mentors {
+    padding: 90px 20px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .mentor-card {
+    padding: 40px 20px;
+  }
+}

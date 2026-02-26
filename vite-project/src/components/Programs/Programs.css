@@ -1,0 +1,310 @@
+/* ============================= */
+/* Section Background */
+/* ============================= */
+
+.programs {
+  padding: 80px 8%;
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  text-align: center;
+  position: relative;
+}
+
+/* Section Title */
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.section-title span {
+  background: linear-gradient(90deg, #4f46e5, #9333ea, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+
+.section-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* ============================= */
+/* Program Grid */
+/* ============================= */
+
+.program-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ============================= */
+/* Program Card */
+/* ============================= */
+
+.program-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Icon */
+
+.program-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  animation: floatIcon 3s infinite ease-in-out;
+}
+
+/* Title */
+
+.program-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Description */
+
+.program-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Hover Effects */
+
+.program-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.25);
+}
+
+/* Glow Effect */
+
+.card-glow {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.2), transparent);
+  top: -50%;
+  left: -50%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.program-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* ============================= */
+/* Animations */
+/* ============================= */
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* Animated Gradient Background */
+/* ============================= */
+
+.programs {
+  padding: 100px 8%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #4f46e5, #9333ea, #ff8c00, #06b6d4);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: #fff;
+}
+
+/* Background Animation */
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================= */
+/* Floating Glow Circles */
+/* ============================= */
+
+.programs::before,
+.programs::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floatBg 10s infinite alternate ease-in-out;
+}
+
+.programs::before {
+  top: -100px;
+  left: -100px;
+}
+
+.programs::after {
+  bottom: -120px;
+  right: -120px;
+}
+
+@keyframes floatBg {
+  from { transform: translateY(0px); }
+  to { transform: translateY(40px); }
+}
+
+/* ============================= */
+/* Section Title */
+/* ============================= */
+
+.section-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.section-title span {
+  color: #ffd700;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  margin-bottom: 60px;
+  opacity: 0.9;
+}
+
+/* ============================= */
+/* Grid Layout */
+/* ============================= */
+
+.program-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================= */
+/* Glass Card Design */
+/* ============================= */
+
+.program-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient Border Glow */
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00, #06b6d4);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.program-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover Effect */
+
+.program-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Animation */
+
+.program-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+  animation: floatIcon 3s infinite ease-in-out;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Card Text */
+
+.program-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.program-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+/* ============================= */
+/* Program Card Title */
+/* ============================= */
+
+.program-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #ffd700;   /* Title different color */
+  letter-spacing: 0.5px;
+}
+
+/* ============================= */
+/* Program Card Description */
+/* ============================= */
+
+.program-card p {
+  font-size: 16px;
+  font-weight: 700;     /* Bold text */
+  color: #000;          /* Black color */
+  line-height: 1.7;
+}
+.program-card p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;   /* Slight black for visibility */
+}
